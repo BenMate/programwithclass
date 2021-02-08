@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Week
+namespace AIE_26_spriteClass
 {
     class Program
     {
