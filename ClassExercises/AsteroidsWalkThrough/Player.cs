@@ -30,19 +30,19 @@ namespace AsteroidsWalkThrough
 
        public void Update()
         {
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_A))
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_A) || Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
                 rotation -= rotationSpeed;
 
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_D)) //makes it so when the player presses a key, an action accurs
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_D) || Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) //makes it so when the player presses a key, an action accurs
                 rotation += rotationSpeed;
 
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_W) || Raylib.IsKeyDown(KeyboardKey.KEY_UP))
             {
                 var dir = GetFacingdirection();
                 velocity += dir * accelerationSpeed;
             }
 
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_S))
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_S) || Raylib.IsKeyDown(KeyboardKey.KEY_DOWN))
             {
                 var dir = GetFacingdirection();
                 velocity -= dir * accelerationSpeed;
