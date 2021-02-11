@@ -84,6 +84,16 @@ namespace AsteroidsWalkThrough
                 Color.WHITE);
         }
 
+        public void AddScore()
+        {
+            
+
+        }
+            
+
+
+
+
     }
 }
 
