@@ -24,6 +24,11 @@ namespace AsteroidsWalkThrough
         public void Update()
         {
             pos += dir;
+            if (pos.X < 0) pos.X = program.windowWidth;
+            if (pos.X > program.windowWidth) pos.X = 0;
+
+            if (pos.Y < 0) pos.Y = program.windowHeight;
+            if (pos.Y > program.windowHeight) pos.Y = 0;
         }
 
         public void Draw()

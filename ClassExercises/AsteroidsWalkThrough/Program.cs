@@ -5,8 +5,8 @@ namespace AsteroidsWalkThrough
 {
     class Program
     {
-        public int windowWidth = 800;
-        public int windowHeight = 450;
+        public int windowWidth = 1600;
+        public int windowHeight = 900;
         public string windowTitle = "asteroids";
 
         Player player;
@@ -32,13 +32,11 @@ namespace AsteroidsWalkThrough
             while (!Raylib.WindowShouldClose())
             {
                 Update();
-                Draw();
-            
+                Draw();           
             }
 
             Raylib.CloseWindow();
-        }
-     
+        }    
              void LoadGame()
            {
             Assets.LoadAssets();
@@ -62,8 +60,6 @@ namespace AsteroidsWalkThrough
             {
                 asteroids[i] = null;
             }
-
-
 
            }
 
@@ -97,15 +93,15 @@ namespace AsteroidsWalkThrough
                     asteroids[i].Update();
                 }
             }
-
+            //check all bullets against all asteroids
+            foreach (var bullet in bullets)
+            {
+                foreach (var asteroid in asteroids)
+                {
+                    DoBulletAsteroidCollision(bullet, asteroid);
+                }
+            }
         }
-
-
-
-
-
-
-
 
         void Draw()
         {
@@ -158,21 +154,23 @@ namespace AsteroidsWalkThrough
             float rot = (float)rand.NextDouble() * MathF.PI * 2.0f;
             Vector2 dir = new Vector2(MathF.Cos(rot), MathF.Sin(rot));
 
-
+            float radius = 40;
 
             //left wall spawn (asteroid)
-            if (side == 0) SpawnAsteroid(new Vector2(0, rand.Next(0, windowHeight)), dir);
+            if (side == 0) SpawnAsteroid(new Vector2(0, rand.Next(0, windowHeight)), dir, radius);
             //top wall spawn
-            if (side == 1) SpawnAsteroid(new Vector2(rand.Next(0, windowWidth), 0), dir);
+            if (side == 1) SpawnAsteroid(new Vector2(rand.Next(0, windowWidth), 0), dir, radius);
             //right wall
-            if (side == 2) SpawnAsteroid(new Vector2(windowWidth, rand.Next(0, windowHeight)), dir);
+            if (side == 2) SpawnAsteroid(new Vector2(windowWidth, rand.Next(0, windowHeight)), dir, radius);
             //bottom wall
-            if (side == 3) SpawnAsteroid(new Vector2(rand.Next(0, windowWidth), windowHeight), dir);
+            if (side == 3) SpawnAsteroid(new Vector2(rand.Next(0, windowWidth), windowHeight), dir, radius);
         }
 
-        void SpawnAsteroid(Vector2 pos, Vector2 dir)
+        void SpawnAsteroid(Vector2 pos, Vector2 dir, float radius)
         {
             Asteroids asteroid = new Asteroids(this, pos, dir);
+            asteroid.radius = radius;
+
             for (int i = 0; i < asteroids.Length; i++)
             {
                 if (asteroids[i] == null)
@@ -182,5 +180,49 @@ namespace AsteroidsWalkThrough
                 }
             }
         }
+
+        void DoBulletAsteroidCollision(Bullet bullet, Asteroids asteroid )
+        {
+            if (bullet == null || asteroid == null)
+                return;
+
+            float distance = (bullet.pos - asteroid.pos).Length();
+            if (distance < asteroid.radius)
+            {
+                //making asteroids split
+                if (asteroid.radius > 7)
+                {
+                    SpawnAsteroid(asteroid.pos, asteroid.dir, asteroid.radius / 2);
+                    SpawnAsteroid(asteroid.pos, -asteroid.dir, asteroid.radius / 2);
+                }
+
+
+                //find the bullet in the array 
+                for (int i=0; i < bullets.Length; i++)
+                {
+                    if (bullets[i] == bullet)
+                    {
+                        bullets[i] = null;
+                        break;
+                    }
+
+                }
+
+                //find the asteroid in the array 
+                for (int i = 0; i < asteroids.Length; i++)
+                {
+                    if (asteroids[i] == asteroid)
+                    {
+                        asteroids[i] = null;
+                        break;
+                    }
+
+                }
+               
+
+
+            }
+        }
+
     }
 }
