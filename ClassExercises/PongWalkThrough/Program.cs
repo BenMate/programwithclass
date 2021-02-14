@@ -50,7 +50,7 @@ namespace PongWalkThrough
         void RunProgram()
         {
             Raylib.InitWindow(windowWidth, windowHeight, "Pong");
-             Raylib.SetTargetFPS(60); //sets fps
+            Raylib.SetTargetFPS(60); //sets fps
 
             LoadGame();
 
@@ -138,8 +138,8 @@ namespace PongWalkThrough
             float right = p.pos.X + p.size.X / 2;
             float left = p.pos.X - p.size.X / 2;
 
-            if (b.pos.Y > top && ball.pos.Y < bottom && b.pos.X > left && b.pos.X < right)
-                //ball is over lapping paddle 
+            //ball is over lapping paddle 
+            if (b.pos.Y > top && ball.pos.Y < bottom && b.pos.X > left && b.pos.X < right)               
                 b.dir.X = -b.dir.X;
 
         }
@@ -156,8 +156,13 @@ namespace PongWalkThrough
                 p.pos += new Vector2(0, p.speed);
             }
 
-        }
 
+            // if (pos.X < 0) pos.X = Paddle.windowWidth;
+            // if (pos.X > Paddle.windowWidth) pos.X = 0;
+
+           // if (pos.Y < 0) pos.Y = p.windowHeight;
+           // if (pos.Y > p.windowHeight) pos.Y = 0;
+        }
 
         void Draw()
         {
@@ -185,10 +190,6 @@ namespace PongWalkThrough
             Raylib.DrawRectanglePro(new Rectangle(p.pos.X, p.pos.Y, p.size.X, p.size.Y), p.size / 2 ,0.0f, Color.RAYWHITE);
 
         }
-
-
-
-
 
 
     }
