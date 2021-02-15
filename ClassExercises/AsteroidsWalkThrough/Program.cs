@@ -101,6 +101,14 @@ namespace AsteroidsWalkThrough
                     DoBulletAsteroidCollision(bullet, asteroid);
                 }
             }
+            //check player against all asteroids.
+
+            foreach (var asteroid in asteroids)
+            {
+                DoPlayerAsteroidCollision(player, asteroid);
+
+            }
+
         }
 
         void Draw()
@@ -126,6 +134,9 @@ namespace AsteroidsWalkThrough
                 }
             }
 
+
+            // draw score ui
+            Raylib.DrawText("Score: " + player.score.ToString(), 10, 10, 30, Color.WHITE);
 
             Raylib.EndDrawing();
         }
@@ -181,22 +192,43 @@ namespace AsteroidsWalkThrough
             }
         }
 
+        void DoPlayerAsteroidCollision(Player player, Asteroids asteroid)
+        {
+            if (player == null || asteroid == null)
+                return;         
+             float distance = (player.pos - asteroid.pos).Length();
+
+            if (distance < asteroid.radius)
+            {
+
+                
+                    Raylib.DrawText( "BIGBOOM", (int)player.pos.X,(int)player.pos.Y , 100, Color.ORANGE);
+
+                
+                
+            }
+
+
+
+
+        }
+
+
         void DoBulletAsteroidCollision(Bullet bullet, Asteroids asteroid )
         {
             if (bullet == null || asteroid == null)
                 return;
-
             float distance = (bullet.pos - asteroid.pos).Length();
             if (distance < asteroid.radius)
             {
+                player.AddScore(20);
+
                 //making asteroids split
-                if (asteroid.radius > 7)
+                if (asteroid.radius > 13)
                 {
                     SpawnAsteroid(asteroid.pos, asteroid.dir, asteroid.radius / 2);
                     SpawnAsteroid(asteroid.pos, -asteroid.dir, asteroid.radius / 2);
                 }
-
-
                 //find the bullet in the array 
                 for (int i=0; i < bullets.Length; i++)
                 {
@@ -205,9 +237,7 @@ namespace AsteroidsWalkThrough
                         bullets[i] = null;
                         break;
                     }
-
                 }
-
                 //find the asteroid in the array 
                 for (int i = 0; i < asteroids.Length; i++)
                 {
@@ -216,13 +246,9 @@ namespace AsteroidsWalkThrough
                         asteroids[i] = null;
                         break;
                     }
-
-                }
-               
-
-
+                } 
+                
             }
         }
-
     }
 }

@@ -34,7 +34,8 @@ namespace AsteroidsWalkThrough
         public void Draw()
         {
 
-            Raylib.DrawCircleLines((int)pos.X, (int)pos.Y, radius, Color.WHITE);
+            Raylib.DrawCircleLines((int)pos.X, (int)pos.Y, radius, Color.GREEN);
+            
         }
 
 

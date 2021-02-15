@@ -13,6 +13,9 @@ namespace AsteroidsWalkThrough
         public Vector2 pos = new Vector2();
         public Vector2 size = new Vector2(64, 64);
 
+        public int score = 0;
+
+
         public float rotation = 0.0f;
         public float rotationSpeed = 5.0f;
 
@@ -81,18 +84,15 @@ namespace AsteroidsWalkThrough
                 new Rectangle(pos.X, pos.Y, size.X, size.Y),
                 new Vector2(0.5f * size.X, 0.5f * size.Y),    //play around with this, (pivit point of asteroids
                 rotation,
-                Color.WHITE);
+                Color.GOLD);
         }
 
-        public void AddScore()
+
+        public void AddScore(int amount)
         {
-            
+            score += amount;
 
         }
-            
-
-
-
 
     }
 }

@@ -35,7 +35,7 @@ namespace AsteroidsWalkThrough
 
         public void Draw()
         {                                                                       //change to change the bullet 
-            Raylib.DrawLine((int)pos.X, (int)pos.Y, (int)(pos.X - dir.X * speed), (int)(pos.Y - dir.Y * speed), Color.WHITE);
+            Raylib.DrawLine((int)pos.X, (int)pos.Y, (int)(pos.X - dir.X * speed), (int)(pos.Y - dir.Y * speed), Color.GOLD);
 
         }
 
