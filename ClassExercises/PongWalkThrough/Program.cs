@@ -156,6 +156,14 @@ namespace PongWalkThrough
                 p.pos += new Vector2(0, p.speed);
             }
 
+            if (p.pos.Y > windowHeight)
+            {
+                p.pos.Y = windowHeight;
+            }
+            if (p.pos.Y < 0)
+            {
+                p.pos.Y = 0;
+            }
 
             // if (pos.X < 0) pos.X = Paddle.windowWidth;
             // if (pos.X > Paddle.windowWidth) pos.X = 0;
