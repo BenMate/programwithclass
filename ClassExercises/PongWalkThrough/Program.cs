@@ -32,8 +32,8 @@ namespace PongWalkThrough
 
     class Program
     {
-        int windowWidth = 800;
-        int windowHeight = 450;
+        int windowWidth = 1600;
+        int windowHeight = 900;
 
         Ball ball;
         Paddle leftPaddle;
@@ -50,7 +50,7 @@ namespace PongWalkThrough
         void RunProgram()
         {
             Raylib.InitWindow(windowWidth, windowHeight, "Pong");
-            Raylib.SetTargetFPS(60); //sets fps
+            Raylib.SetTargetFPS(120); //sets fps
 
             LoadGame();
 

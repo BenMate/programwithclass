@@ -80,7 +80,7 @@ namespace AsteroidsWalkThrough
 
 
 
-        void Update()
+       public void Update()
 
         {
             asteroidSpawnCooldown -= Raylib.GetFrameTime();
@@ -222,7 +222,7 @@ namespace AsteroidsWalkThrough
              float distance = (player.pos - asteroid.pos).Length();
 
             
-            //trying to make dead "dead"
+            //trying to make text near player "dead"
             
           //  if (distance < asteroid.radius)
          //   {
@@ -230,7 +230,7 @@ namespace AsteroidsWalkThrough
             }
         }
 
-        void DoBulletAsteroidCollision(Bullet bullet, Asteroid asteroid )
+         void DoBulletAsteroidCollision(Bullet bullet, Asteroid asteroid )
         {
             if (bullet == null || asteroid == null)
                 return;
