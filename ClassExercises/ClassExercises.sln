@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsteroidsWalkThrough", "Ast
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PongWalkThrough", "PongWalkThrough\PongWalkThrough.csproj", "{7D457345-13F5-4CC6-A003-A99E5C080E40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIE_27_Constructors", "AIE_27_Constructors\AIE_27_Constructors.csproj", "{E620A7FB-6806-4DB2-AE64-7EDCAEAE5D43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIE_27_Constructors", "AIE_27_Constructors\AIE_27_Constructors.csproj", "{E620A7FB-6806-4DB2-AE64-7EDCAEAE5D43}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessGame", "ChessGame\ChessGame\ChessGame.csproj", "{F765244F-5E0B-4B74-81E4-904C58514724}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{E620A7FB-6806-4DB2-AE64-7EDCAEAE5D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E620A7FB-6806-4DB2-AE64-7EDCAEAE5D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E620A7FB-6806-4DB2-AE64-7EDCAEAE5D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F765244F-5E0B-4B74-81E4-904C58514724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F765244F-5E0B-4B74-81E4-904C58514724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F765244F-5E0B-4B74-81E4-904C58514724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F765244F-5E0B-4B74-81E4-904C58514724}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

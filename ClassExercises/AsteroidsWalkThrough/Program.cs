@@ -9,9 +9,11 @@ namespace AsteroidsWalkThrough
         public int windowHeight = 900;
         public string windowTitle = "asteroids";
 
+        // GameState currentState = null;
+
         Player player;
         Bullet[] bullets = new Bullet [100];
-        Asteroids[] asteroids = new Asteroids[100];
+        Asteroid[] asteroids = new Asteroid[100];
 
         float asteroidSpawnCooldown = 4.0f;
         float asteroidSpawnCooldownReset = 4.0f;
@@ -27,10 +29,23 @@ namespace AsteroidsWalkThrough
             Raylib.InitWindow(windowWidth, windowHeight, windowTitle);
             Raylib.SetTargetFPS(60);
 
+            // currentState = new SplashState();
+
             LoadGame();
 
             while (!Raylib.WindowShouldClose())
             {
+                // update the current state
+              //  currentState.Update();
+
+               // Raylib.BeginDrawing();
+              //  Raylib.ClearBackground();
+
+                // draw the current state
+                //currentState.Draw();
+
+               // Raylib.EndDrawing();
+
                 Update();
                 Draw();           
             }
@@ -133,8 +148,15 @@ namespace AsteroidsWalkThrough
                     asteroids[i].Draw();
                 }
             }
-
-
+            //trying to make text
+          //  while (dead = true)
+           // {
+          //      Raylib.DrawText("you died", (int)player.pos.X + 100, (int)player.pos.Y + 100, 100, Color.ORANGE);
+          //  }
+               
+            
+                
+            
             // draw score ui
             Raylib.DrawText("Score: " + player.score.ToString(), 10, 10, 30, Color.WHITE);
 
@@ -179,7 +201,7 @@ namespace AsteroidsWalkThrough
 
         void SpawnAsteroid(Vector2 pos, Vector2 dir, float radius)
         {
-            Asteroids asteroid = new Asteroids(this, pos, dir);
+            Asteroid asteroid = new Asteroid(this, pos, dir);
             asteroid.radius = radius;
 
             for (int i = 0; i < asteroids.Length; i++)
@@ -192,29 +214,23 @@ namespace AsteroidsWalkThrough
             }
         }
 
-        void DoPlayerAsteroidCollision(Player player, Asteroids asteroid)
+        // player collision
+        void DoPlayerAsteroidCollision(Player player, Asteroid asteroid)
         {
             if (player == null || asteroid == null)
                 return;         
              float distance = (player.pos - asteroid.pos).Length();
 
-            if (distance < asteroid.radius)
-            {
-
-                
-                    Raylib.DrawText( "BIGBOOM", (int)player.pos.X,(int)player.pos.Y , 100, Color.ORANGE);
-
-                
-                
+            
+            //trying to make dead "dead"
+            
+          //  if (distance < asteroid.radius)
+         //   {
+          //     bool dead = true;                                                             
             }
-
-
-
-
         }
 
-
-        void DoBulletAsteroidCollision(Bullet bullet, Asteroids asteroid )
+        void DoBulletAsteroidCollision(Bullet bullet, Asteroid asteroid )
         {
             if (bullet == null || asteroid == null)
                 return;

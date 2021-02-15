@@ -5,23 +5,17 @@ using System.Text;
 using Raylib_cs;
 namespace AsteroidsWalkThrough
 {
-    class Bullet
+    class Bullet : GameObject
     {
-
-        Program program;
-
-        public Vector2 pos = new Vector2();
-        public Vector2 dir = new Vector2();
+        
         public float speed = 10;
 
 
-        public Bullet(Program program, Vector2 pos, Vector2 dir)
+        public Bullet(Program program, Vector2 pos, Vector2 dir) : base(program, pos)
         {
-            this.program = program;
-            this.pos = pos;
             this.dir = dir;
         }
-        public void Update()
+        public override void Update()
         {
             pos += dir * speed;
 
@@ -33,7 +27,7 @@ namespace AsteroidsWalkThrough
             if (pos.Y > program.windowHeight) pos.Y = 0;
         }
 
-        public void Draw()
+        public override void Draw()
         {                                                                       //change to change the bullet 
             Raylib.DrawLine((int)pos.X, (int)pos.Y, (int)(pos.X - dir.X * speed), (int)(pos.Y - dir.Y * speed), Color.GOLD);
 

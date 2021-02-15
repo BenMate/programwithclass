@@ -6,38 +6,32 @@ using System.Text;
 
 namespace AsteroidsWalkThrough
 {
-    class Player
+    class Player : GameObject
     {
-        Program program;
-
-        public Vector2 pos = new Vector2();
         public Vector2 size = new Vector2(64, 64);
 
         public int score = 0;
 
 
-        public float rotation = 0.0f;
         public float rotationSpeed = 5.0f;
 
         public float accelerationSpeed = 0.1f;
 
         public Vector2 velocity = new Vector2();
 
-        public Player(Program program, Vector2 pos, Vector2 size)
+        public Player(Program program, Vector2 pos, Vector2 size) : base(program, pos)
         {
-            this.program = program;
-            this.pos = pos;
             this.size = size;
-
         }
 
-       public void Update()
+       public override void Update()
         {
             if (Raylib.IsKeyDown(KeyboardKey.KEY_A) || Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
-                rotation -= rotationSpeed;
+                Rotate(-rotationSpeed);
+                
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_D) || Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) //makes it so when the player presses a key, an action accurs
-                rotation += rotationSpeed;
+                Rotate(rotationSpeed);
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_W) || Raylib.IsKeyDown(KeyboardKey.KEY_UP))
             {
@@ -68,13 +62,10 @@ namespace AsteroidsWalkThrough
 
         public Vector2 GetFacingdirection()
         {
-            return new Vector2(
-                MathF.Cos((MathF.PI / 180) * rotation),
-                MathF.Sin((MathF.PI / 180) * rotation)
-                );
+            return dir;
         }
 
-        public void Draw()
+        public override void Draw()
         {
             var texture = Assets.shipTexture;
 
@@ -83,7 +74,7 @@ namespace AsteroidsWalkThrough
                 new Rectangle(0, 0, texture.width, texture.height),
                 new Rectangle(pos.X, pos.Y, size.X, size.Y),
                 new Vector2(0.5f * size.X, 0.5f * size.Y),    //play around with this, (pivit point of asteroids
-                rotation,
+                GetRotation(),
                 Color.GOLD);
         }
 

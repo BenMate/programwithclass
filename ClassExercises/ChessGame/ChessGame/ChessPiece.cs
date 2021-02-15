@@ -93,6 +93,8 @@ namespace ChessGame
                                          
             }
 
+
+
             //black side
             else
             {
@@ -102,6 +104,8 @@ namespace ChessGame
                         return true;
                 }
             }
+
+
 
             return false;
         }
