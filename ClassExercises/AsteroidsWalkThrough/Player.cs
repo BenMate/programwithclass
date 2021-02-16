@@ -83,6 +83,9 @@ namespace AsteroidsWalkThrough
         {
             score += amount;
 
+
+
+
         }
 
     }

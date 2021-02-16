@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Numerics;
+using System.Threading;
 using Raylib_cs;
 namespace AsteroidsWalkThrough
 {
@@ -149,9 +150,9 @@ namespace AsteroidsWalkThrough
                 }
             }
             //trying to make text
-          //  while (dead = true)
+          // while (dead = true)
            // {
-          //      Raylib.DrawText("you died", (int)player.pos.X + 100, (int)player.pos.Y + 100, 100, Color.ORANGE);
+          //      
           //  }
                
             
@@ -222,12 +223,12 @@ namespace AsteroidsWalkThrough
              float distance = (player.pos - asteroid.pos).Length();
 
             
-            //trying to make text near player "dead"
-            
-          //  if (distance < asteroid.radius)
-         //   {
-          //     bool dead = true;                                                             
-            }
+            //trying to make text near player when they collide with asteroid           
+          if (distance < asteroid.radius)
+          {              
+                Raylib.DrawText("BIGBOOM", (int)player.pos.X, (int)player.pos.Y, 100, Color.ORANGE);
+               // Thread.Sleep(50);
+          }
         }
 
          void DoBulletAsteroidCollision(Bullet bullet, Asteroid asteroid )

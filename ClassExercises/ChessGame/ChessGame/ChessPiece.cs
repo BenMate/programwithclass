@@ -162,32 +162,31 @@ namespace ChessGame
 
         public override bool IsValidMove(int targetRow, int targetCol)
         {
-
             var targetPiece = board.GetPiece(targetRow, targetCol);
-            if (targetPiece != null && targetPiece.GetSide() == GetSide())
+            if (targetPiece != null)
                 return false;
-
-            //white side
-            if (GetSide() == EChessSide.WHITE)
+            if (!(targetCol == GetCol() || targetRow == GetRow()))
+                return false;
+            int dX = GetCol() - targetCol;
+            int dY = GetRow() - targetRow;
+            if (dX > 0) dX = 1;
+            if (dX < 0) dX = -1;
+            if (dY > 0) dY = 1;
+            if (dY < 0) dY = -1;
+            int cX = targetCol;
+            int cY = targetRow;
+            while (!(cX == GetCol() && cY == GetRow()) && cX >= 0 && cX < 8 && cY >= 0 && cY < 8)
             {
-                if (targetCol == GetCol())
+                var pieceInSpot = board.GetPiece(cY, cX);
+                if (pieceInSpot != null)
                 {
-                    if (GetRow() + 1 == targetRow)
-                        return true;
+                    return false;
                 }
-
+                cX += dX;
+                cY += dY;
             }
 
-            //black side
-            else
-            {
-                if (targetCol == GetCol())
-                {
-                    if (GetRow() - 1 == targetRow)
-                        return true;
-                }
-            }
-            return false;
+            return true;
         }
     }
 
@@ -205,26 +204,10 @@ namespace ChessGame
             var targetPiece = board.GetPiece(targetRow, targetCol);
             if (targetPiece != null && targetPiece.GetSide() == GetSide())
                 return false;
-            //white side
-            if (GetSide() == EChessSide.WHITE)
-            {
-                if (targetCol == GetCol())
-                {
-                    if (GetRow() + 1 == targetRow)
-                        return true;
-                }
-
-            }
-
-            //black side
-            else
-            {
-                if (targetCol == GetCol())
-                {
-                    if (GetRow() - 1 == targetRow)
-                        return true;
-                }
-            }
+           
+         
+          
+            
 
             return false;
         }
@@ -279,29 +262,35 @@ namespace ChessGame
 
         public override bool IsValidMove(int targetRow, int targetCol)
         {
-
             var targetPiece = board.GetPiece(targetRow, targetCol);
             if (targetPiece != null && targetPiece.GetSide() == GetSide())
                 return false;
-
-            //white side
-            if (GetSide() == EChessSide.WHITE)
+            for (int i = 1; i < 8; i++)
             {
-                if (targetCol == GetCol())
+                if (GetRow() + i == targetRow && GetCol() + i == targetCol)
                 {
-                    if (GetRow() + 1 == targetRow)
-                        return true;
+                    return true;
                 }
-
             }
-
-            //black side
-            else
+            for (int i = 1; i < 8; i++)
             {
-                if (targetCol == GetCol())
+                if (GetRow() - i == targetRow && GetCol() - i == targetCol)
                 {
-                    if (GetRow() - 1 == targetRow)
-                        return true;
+                    return true;
+                }
+            }
+            for (int i = 1; i < 8; i++)
+            {
+                if (GetRow() + i == targetRow && GetCol() - i == targetCol)
+                {
+                    return true;
+                }
+            }
+            for (int i = 1; i < 8; i++)
+            {
+                if (GetRow() - i == targetRow && GetCol() + i == targetCol)
+                {
+                    return true;
                 }
             }
             return false;
