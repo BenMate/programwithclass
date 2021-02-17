@@ -25,7 +25,8 @@ namespace AIE_29_SerialCotact
         public void Serialise(string filename)
         {
             //create diractory
-            
+            var fileInfo = new FileInfo(filename);
+            Directory.CreateDirectory(fileInfo.Directory.FullName);
             
                 // TODO: use StreamWriter to write the name, email and phone to file
                 using (StreamWriter sw = File.CreateText(filename))
@@ -40,17 +41,12 @@ namespace AIE_29_SerialCotact
         public void DeSerialise(string filename)
         {          
                 // TODO: use StreamReader to write the name, email and phone to file
-                using (StreamReader sr = File.OpenText(filename))
-                {
-                    string s;
-                    
-                    while ((s = sr.ReadLine()) != null)
-                    {
-                        Console.WriteLine(s);
-                    }
+            using (StreamReader sr = File.OpenText(filename))
+            {
 
-                // sr.ReadLine(name);
-
+                name = sr.ReadLine();
+                email = sr.ReadLine();
+                phone = sr.ReadLine();
 
             }
 

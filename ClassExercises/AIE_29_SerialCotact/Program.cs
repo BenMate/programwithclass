@@ -6,9 +6,9 @@ namespace AIE_29_SerialCotact
     {
         static void Main(string[] args)
         {
-            Contact person1 = new Contact("bob", "bob@email.com", "12345678");
-            Contact person2 = new Contact("fred", "fred@email.com", "12345678");
-            Contact person3 = new Contact("ted", "ted@email.com", "12345678");
+            Contact person1 = new Contact("bob", "bobTheBuilder@email.com", "12345678");
+            Contact person2 = new Contact("fred", "FredFromBuffy@email.com", "12345678");
+            Contact person3 = new Contact("ted", "TeddyBear@email.com", "12345678");
 
             // write each contact to file
             person1.Serialise("./Contacts/bob.txt");

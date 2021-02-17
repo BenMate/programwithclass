@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-namespace AIE_30_SaveContact
+namespace AIE_30_SaveContactList
 {
     class Program
     {
@@ -58,11 +58,11 @@ namespace AIE_30_SaveContact
             using (StreamReader sr = File.OpenText(filename))
             {
                 
-                string s;
-                while ((s = sr.ReadLine()) != null)
+                string line;
+                while ((line = sr.ReadLine()) != null)
                 {
 
-                    if (string.IsNullOrEmpty(s))
+                    if (string.IsNullOrEmpty(line))
                     {
                         contacts.Add(contact);
 
@@ -71,7 +71,7 @@ namespace AIE_30_SaveContact
                     
                     else
                     {
-                        var entry = s.Split(" ");
+                        var entry = line.Split(" ");
 
                         if (entry[0] == "name:") contact.name = entry[1];
                         if (entry[0] == "email:") contact.email = entry[1];

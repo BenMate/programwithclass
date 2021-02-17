@@ -24,16 +24,16 @@ namespace AIE_31_HighScoreTable
         class Program
         {
 
-            static void Main(string[] args)
-            {
+           static void Main(string[] args)
+           {
 
                 List<ScoreEntry> scores = new List<ScoreEntry>()
             {
-                new ScoreEntry("bob",12),
-                new ScoreEntry("fred",20),
-                new ScoreEntry("ted",6),
-                new ScoreEntry("tom",42),
-                new ScoreEntry("harry",9),
+                    new ScoreEntry("bob",12),
+                    new ScoreEntry("fred",20),
+                    new ScoreEntry("ted",6),
+                    new ScoreEntry("tom",42),
+                    new ScoreEntry("harry",9),
 
             };
 
@@ -44,7 +44,7 @@ namespace AIE_31_HighScoreTable
                 scores = new List<ScoreEntry>();
 
                 //Read the scores
-                DeSerialiseScoreos("highscore.txt", scores);
+                DeSerialiseScoreos("highscores.txt", scores);
 
                 //print the scores
                 foreach (var entry in scores)
@@ -54,60 +54,40 @@ namespace AIE_31_HighScoreTable
 
                 static void SerialiseScores(string filename, List<ScoreEntry> scores)
                 {
-                    //TODO: write core to write the scores to the file
+                    //creates the file if the file isnt there.
+                    FileInfo fileInfo = new FileInfo(filename);
+                    Directory.CreateDirectory(fileInfo.Directory.FullName);
 
+                    //TODO: write core to write the scores to the file
                     using (StreamWriter sw = File.CreateText(filename))
                     {
                         foreach (var entry in scores)
                         {
-                            if (!string.IsNullOrWhiteSpace(entry.name)) sw.WriteLine("name: " + entry.name);
-                            if (!string.IsNullOrWhiteSpace(entry.score)) sw.WriteLine("score: " + entry.score);
-                            sw.WriteLine("");
-
+                            sw.WriteLine($"{entry.name} {entry.score}");
                         }
                     }
+
                 }
 
                 static void DeSerialiseScoreos(string filename, List<ScoreEntry> scores)
                 {
-
-
-                    //creates the file if the file isnt there.
-                    var fileInfo = new FileInfo(filename);
-                    var dir = fileInfo.Directory.FullName;
-                    Directory.CreateDirectory(dir);
-
-
-                    ScoreEntry scores = new ScoreEntry();
-
                     //TODO: write code to read the scores from the file
+
                     using (StreamReader sr = File.OpenText(filename))
                     {
-
-                        string s;
-                        while ((s = sr.ReadLine()) != null)
+                        string line;
+                        while ((line = sr.ReadLine())!= null)
                         {
+                            var lineItems = line.Split(" ");
 
-                            if (string.IsNullOrEmpty(s))
-                            {
-                                scores.Add(entry);
+                            string name = lineItems[0];
+                            int.TryParse(lineItems[1], out int score);
 
-                                entry = new ScoreEntry();
-                            }
-
-                            else
-                            {
-                                var entry = s.Split(" ");
-
-                                if (entry[0] == "name:") scores.name = entry[1];
-                                if (entry[0] == "score:") scores.number = entry[1];
-
-
-                                // Console.WriteLine(entry[1]);
-                            }
+                            ScoreEntry entry = new ScoreEntry(name, score);
+                            scores.Add(entry);
                         }
-
                     }
+                    
                 }
             }
         }

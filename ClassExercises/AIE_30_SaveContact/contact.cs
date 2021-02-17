@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace AIE_30_SaveContact
+namespace AIE_30_SaveContactList
 {
     class Contact
     {
