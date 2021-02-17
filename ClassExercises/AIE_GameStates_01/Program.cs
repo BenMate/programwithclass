@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Raylib_cs;
 
 namespace AIE_GameStates_01
@@ -11,6 +12,8 @@ namespace AIE_GameStates_01
         string windowTitle = "GameStateManagement";
 
         GameState currentGameState;
+
+       public List<ScoreEntry> scores = new List<ScoreEntry>();
 
         static void Main(string[] args)
         {
@@ -36,15 +39,22 @@ namespace AIE_GameStates_01
 
             Raylib.CloseWindow();
         }
-            
+
         void LoadGame()
         {
             //load assets, files sounds imagies etc
 
+            scores = new List<ScoreEntry>()
+            {
+                new ScoreEntry("bob", 102),
+                new ScoreEntry("fred", 58),
+                new ScoreEntry("ted", 69),
+            };
+
             //changes the gamestate  
             currentGameState = new SplashScreen(this);
         }
-            
+
         void Update()
         {
             if (currentGameState != null)
@@ -63,13 +73,13 @@ namespace AIE_GameStates_01
             Raylib.DrawFPS(10, windowHeight - 20);
             Raylib.EndDrawing();
         }
-            
-            public void ChangeGameState(GameState newGameState)
+
+        public void ChangeGameState(GameState newGameState)
         {
             currentGameState = newGameState;
         }
 
-
-
+        
+      
     }
 }

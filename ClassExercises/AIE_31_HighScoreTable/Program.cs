@@ -86,8 +86,7 @@ namespace AIE_31_HighScoreTable
                             ScoreEntry entry = new ScoreEntry(name, score);
                             scores.Add(entry);
                         }
-                    }
-                    
+                    }                  
                 }
             }
         }
