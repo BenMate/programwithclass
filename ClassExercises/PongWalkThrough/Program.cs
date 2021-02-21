@@ -50,7 +50,7 @@ namespace PongWalkThrough
         void RunProgram()
         {
             Raylib.InitWindow(windowWidth, windowHeight, "Pong");
-            Raylib.SetTargetFPS(120); //sets fps
+             Raylib.SetTargetFPS(120); //sets fps
 
             LoadGame();
 

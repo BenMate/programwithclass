@@ -40,7 +40,7 @@ namespace AIE_GameStates_01
             Raylib.CloseWindow();
         }
 
-        void LoadGame()
+       public void LoadGame()
         {
             //load assets, files sounds imagies etc
 
