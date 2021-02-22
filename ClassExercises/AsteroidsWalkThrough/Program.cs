@@ -223,7 +223,8 @@ namespace AsteroidsWalkThrough
              float distance = (player.pos - asteroid.pos).Length();
 
             
-            //trying to make text near player when they collide with asteroid           
+            //trying to make text near player when they collide with asteroid  
+            //todo         
           if (distance < asteroid.radius)
           {              
                 Raylib.DrawText("BIGBOOM", (int)player.pos.X, (int)player.pos.Y, 100, Color.ORANGE);

@@ -55,7 +55,7 @@ namespace Rand_01_madLib
             Console.WriteLine($"I look outside and saw {nouns2} running around ");
             Console.WriteLine($"It was nice. I felt {feeling1} ");
             Console.WriteLine($"The next day i was {verb1} towards the bus.");
-            Console.WriteLine($"I tripped and fell in {noun4} Everyone Laughed");
+            Console.WriteLine($"I tripped and fell onto the {noun4} Everyone Laughed");
             Console.WriteLine($"at school {name1} was talking to me.");
             Console.WriteLine($"I Felt {feeling2} .....");
             Console.WriteLine($"School ended. When i got home i saw a {noun3} ");

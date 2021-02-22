@@ -15,7 +15,7 @@ namespace Rand_02_Aray
 
 
 
-            luckyNumbers[1] = 9000;
+            luckyNumbers[1] = 9001;
 
 
             Console.WriteLine( luckyNumbers[1]);
