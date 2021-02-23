@@ -12,7 +12,7 @@ namespace AIE_Assessment_Exercise_03
         {
             int numberOfElements = 0;
 
-            if (args.Length < 1) args = new string[] { "15" };
+            if (args.Length < 1) args = new string[] { "100" };
 
             numberOfElements = Int32.Parse(args[0]);
 

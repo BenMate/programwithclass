@@ -20,38 +20,29 @@ namespace AIE_Assessment_Exercise_04
                 numbers[i] = Int32.Parse(values[i]);
             }
 
-           //  int[] totalSum = Sum(numbers);
+            //calls the sum function, outputs totalsum
+            int totalSum = SumNumbers(numbers);
+            Console.WriteLine(totalSum);
 
-           // for (int i = 0; i < totalSum.Length; i++)
-           // {
-
-           //     Console.WriteLine(i);
-           // }
-            
 
             // TODO:
             // Write a function that accepts the integer array 'numbers' and 
             // returns the sum of the array
 
-            static int[] Sum(int numbers)
+            static int SumNumbers(int[] numbers)
             {
-                int[] total = new int [numbers];
-
-
-
-                //todo: loop through each number in the numbers array
-                // add each number to the total.
                 
-                for (int i = 0; i < numbers; i++)
+            //todo: loop through each number in the numbers array
+                // add each number to the total.
+                int sum = 0;
+                for (int i = 0; i < numbers.Length; i++)
                 {
                     //sum += arr[i];
-                    total[i] += numbers;
+                    sum += numbers[i];
                     
                 }
-
-
-
-                return total;
+              
+                return sum;
             }
 
         }

@@ -10,7 +10,12 @@ namespace AIE_Assessment_Exercise_06
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //output file needs to be called output.txt 
+            //first file is called words.txt
+            string filepath = @"c:/Demos/words.txt";
+
+            
+
         }
     }
 }
