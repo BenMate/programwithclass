@@ -59,23 +59,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rand_04_ReturnMethod", "Ran
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rand_05_IfStatements", "rand_05_IfStatements\rand_05_IfStatements.csproj", "{C50B2CD9-143C-440F-A394-7105CCF687F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rand_06_Calculator", "Rand_06_Calculator\Rand_06_Calculator.csproj", "{604BEE97-1296-4563-AFA1-F72133DEC6FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rand_06_Calculator", "Rand_06_Calculator\Rand_06_Calculator.csproj", "{604BEE97-1296-4563-AFA1-F72133DEC6FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rand_07_SwitchStatement", "Random_07_SwitchStatement\Rand_07_SwitchStatement.csproj", "{FEE27525-E60F-4B40-8AD6-1B6BCCA06412}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rand_07_SwitchStatement", "Random_07_SwitchStatement\Rand_07_SwitchStatement.csproj", "{FEE27525-E60F-4B40-8AD6-1B6BCCA06412}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rand_08_WhileLoop", "Rand_08_WhileLoop\Rand_08_WhileLoop.csproj", "{C99A7319-3E2B-4CEF-85F9-CE97EC7BA232}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rand_08_WhileLoop", "Rand_08_WhileLoop\Rand_08_WhileLoop.csproj", "{C99A7319-3E2B-4CEF-85F9-CE97EC7BA232}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rand_09_GuessingGame", "Rand_09_GuessingGame\Rand_09_GuessingGame.csproj", "{75EC34FB-B35E-45C2-9C6B-2E8BD3450B1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rand_09_GuessingGame", "Rand_09_GuessingGame\Rand_09_GuessingGame.csproj", "{75EC34FB-B35E-45C2-9C6B-2E8BD3450B1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rand_09_GuessingGameChallange", "Rand_09_GuessingGameChallange\Rand_09_GuessingGameChallange.csproj", "{F3DA9FE9-0C2E-4AD2-A642-ED8FD135CEF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rand_09_GuessingGameChallange", "Rand_09_GuessingGameChallange\Rand_09_GuessingGameChallange.csproj", "{F3DA9FE9-0C2E-4AD2-A642-ED8FD135CEF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rand_10_ForLoop", "Rand_10_ForLoop\Rand_10_ForLoop.csproj", "{8AC1A3E1-6490-4E23-BBC1-E4A0A991D4BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rand_10_ForLoop", "Rand_10_ForLoop\Rand_10_ForLoop.csproj", "{8AC1A3E1-6490-4E23-BBC1-E4A0A991D4BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rand_11_exponent", "rand_11_exponent\rand_11_exponent.csproj", "{6E2B4D17-E075-41BF-8071-047A59FADBEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rand_11_exponent", "rand_11_exponent\rand_11_exponent.csproj", "{6E2B4D17-E075-41BF-8071-047A59FADBEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rand_12_2dArray", "rand_12_2dArray\rand_12_2dArray.csproj", "{BA192E43-0DC7-4E9C-9090-F3A5ABE732B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rand_12_2dArray", "rand_12_2dArray\rand_12_2dArray.csproj", "{BA192E43-0DC7-4E9C-9090-F3A5ABE732B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rand_13_Classes", "Rand_13_Classes\Rand_13_Classes.csproj", "{BB24AF56-615D-4F8E-99AF-1336F9B2D40A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rand_13_Classes", "Rand_13_Classes\Rand_13_Classes.csproj", "{BB24AF56-615D-4F8E-99AF-1336F9B2D40A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Study_fileIO_01_SaveContact", "Study_fileIO_01_SaveContact\Study_fileIO_01_SaveContact.csproj", "{545E772F-915B-4314-A92C-C1C8C74F0773}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study_fileIO_02_SaveContact", "Study_fileIO_02_SaveContact\Study_fileIO_02_SaveContact.csproj", "{C82AA115-5006-4BE2-8B90-C48E576E8699}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -231,6 +235,14 @@ Global
 		{BB24AF56-615D-4F8E-99AF-1336F9B2D40A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB24AF56-615D-4F8E-99AF-1336F9B2D40A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB24AF56-615D-4F8E-99AF-1336F9B2D40A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{545E772F-915B-4314-A92C-C1C8C74F0773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{545E772F-915B-4314-A92C-C1C8C74F0773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{545E772F-915B-4314-A92C-C1C8C74F0773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{545E772F-915B-4314-A92C-C1C8C74F0773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82AA115-5006-4BE2-8B90-C48E576E8699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82AA115-5006-4BE2-8B90-C48E576E8699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82AA115-5006-4BE2-8B90-C48E576E8699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82AA115-5006-4BE2-8B90-C48E576E8699}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
