@@ -3,7 +3,7 @@
  */
 
 using System;
-
+//           rename namespace "Greetings" ?
 namespace AIE_Assessment_Exercise_07
 {
     class Program

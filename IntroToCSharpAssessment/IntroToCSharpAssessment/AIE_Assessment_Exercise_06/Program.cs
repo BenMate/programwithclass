@@ -31,7 +31,7 @@ namespace AIE_Assessment_Exercise_06
             using (StreamReader sr = File.OpenText(filename))
             {                
                 int numWords = int.Parse(sr.ReadLine());
-                for (int i = 1; i < numWords; i++)
+                for (int i = 0; i < numWords; i++)
                 {
                     words.Add(sr.ReadLine()); 
                 }
@@ -53,7 +53,7 @@ namespace AIE_Assessment_Exercise_06
 
             using (StreamWriter sw = File.CreateText(filename))
             {
-                for (int i = 1; i < words.Count; i++)
+                for (int i = 0; i < words.Count; i++)
                 {
                     sw.WriteLine(words[i]);
                 }
