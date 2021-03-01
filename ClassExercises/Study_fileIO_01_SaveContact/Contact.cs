@@ -29,7 +29,7 @@ namespace Study_fileIO_01_SaveContact
             //creates file if it doesnt exit
             var fileInfo = new FileInfo(filename);
             Directory.CreateDirectory(fileInfo.Directory.FullName);
-            //todo: use StreamWriter to write the bame, email and phone to fill
+            //todo: use StreamWriter to write the name, email and phone to fill
 
             using (StreamWriter sw = File.CreateText(filename))
             {
