@@ -5,19 +5,18 @@ using System.Text;
 namespace AIE_Assessment_Exercise_07
 {
     public class Person
-    {
-        //TODO: SayGreeting function "hello.im -persons name-"
-        //TODO: initialize an instance of both person and docter,ouptuts their greetings to console.
-        //TODO: both classes implement a public default constructor and a constructor that accepts a string argument
-        //      containing the persons name.
-
-      
-        public string name = "";
-        public string phone = "";
-        public string email = "";
-       
-        
+    {                
+         string name = "";
+         string phone = "";
+         string email = "";
+             
         //public default constructor
+        public Person ()
+        {
+
+        }
+      
+        //Constructor that accepts a string argument
         public Person(string name, string phone,string email)
         {
             this.name  = name;
@@ -25,15 +24,10 @@ namespace AIE_Assessment_Exercise_07
             this.email = email;
         }
 
-        public void Greetings()
+        public virtual void SayGreeting()
         {
-            Console.WriteLine();
+            Console.WriteLine($"Hello, Im {name}");
+            
         }
     }
-
-
-
-
-
-
 }

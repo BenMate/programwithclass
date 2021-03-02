@@ -6,7 +6,7 @@ namespace Rand_03_Methods
     {
         static void Main(string[] args)
         {
-            String name;
+            string name;
             int age = 21;
 
             Console.WriteLine("Whats your name?");

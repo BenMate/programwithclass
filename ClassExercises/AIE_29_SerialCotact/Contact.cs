@@ -40,7 +40,7 @@ namespace AIE_29_SerialCotact
 
         public void DeSerialise(string filename)
         {          
-                // TODO: use StreamReader to write the name, email and phone to file
+                // TODO: use StreamReader to read the name, email and phone to file
             using (StreamReader sr = File.OpenText(filename))
             {
 

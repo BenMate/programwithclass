@@ -4,25 +4,27 @@ using System.Text;
 
 namespace AIE_Assessment_Exercise_07
 {
-    public class Doctor
+    public class Doctor: Person
     {
         //template for doctor
 
-        public string salary = "";
+         string name = "";
 
+        //default constructor
         public Doctor()
         {
 
         }
 
-        public Doctor(string salary)
+        //Constructor that accepts string value 
+        public Doctor(string name, string salary, string phone, string email) : base ()
         {
-            this.salary = salary;
+            this.name = name;
         }
 
-        public void Greetings()
+        public override void SayGreeting()
         {
-            Console.WriteLine();
+           Console.WriteLine($"Hello, Im Dr. {name} ");
         }
 
     }

@@ -10,10 +10,7 @@ namespace AIE_Assessment_Exercise_08
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Hello World");
-
-            /*
+            //makes the 3 by 3 map
             Room[,] map = new Room[3, 3];
             for (int row = 0; row < 3; row++)
             {
@@ -40,7 +37,7 @@ namespace AIE_Assessment_Exercise_08
                 Console.WriteLine();
             }
             Console.ReadLine();
-            */
+            
         }
     }
 }

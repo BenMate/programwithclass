@@ -45,12 +45,9 @@ namespace AIE_Assessment_Exercise_06
             words.Sort();
         }
 
-        //save words to file
+        //save words to new file
         public static void SaveWords(string filename, List<string> words)
-        {
-            var fileInfo = new FileInfo(filename);
-            Directory.CreateDirectory(fileInfo.Directory.FullName);
-
+        {            
             using (StreamWriter sw = File.CreateText(filename))
             {
                 for (int i = 0; i < words.Count; i++)

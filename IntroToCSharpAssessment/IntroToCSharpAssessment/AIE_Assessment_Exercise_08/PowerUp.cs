@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AIE_27_Constructors
+namespace AIE_Assessment_Exercise_08
 {
-    class SomeAnimal : Animal
+    class PowerUp: GameObject
     {
-        public SomeAnimal() : base("tiger")
+
+
+
+       public void Draw()
         {
+
         }
+
     }
 }
