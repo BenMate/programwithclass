@@ -6,15 +6,17 @@ namespace AIE_Assessment_Exercise_08
 {
     class Player: Character
     {
-        public  Player(int att, int hp, int def) : base()
+
+        public Player () : base ()
         {
+
 
         }
-        
 
-        void Draw()
+
+        public override void Draw()
         {
-
+            Console.Write("X");
         }
     }
 }

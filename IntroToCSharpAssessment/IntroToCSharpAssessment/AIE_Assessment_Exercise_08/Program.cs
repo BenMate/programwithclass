@@ -10,7 +10,10 @@ namespace AIE_Assessment_Exercise_08
     {
         static void Main(string[] args)
         {
-            //makes the 3 by 3 map
+
+
+            // RunTests();
+
             Room[,] map = new Room[3, 3];
             for (int row = 0; row < 3; row++)
             {
@@ -21,7 +24,7 @@ namespace AIE_Assessment_Exercise_08
             }
 
             Player p = new Player();
-            Enemy e = new Enemy(10, 27, 6);
+            Enemy e = new Enemy(10,27,6);
             PowerUp pu = new PowerUp();
 
             map[1, 1].AddGameObject(p);
@@ -36,8 +39,45 @@ namespace AIE_Assessment_Exercise_08
                 }
                 Console.WriteLine();
             }
+            //gives a space 
+            Console.WriteLine();
+
+            //removes 
+
+            map[2, 0].RemovingObject(e);
+
+            for (int row = 0; row < 3; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    map[row, col].Draw();
+                }
+                Console.WriteLine();
+            }
+
             Console.ReadLine();
             
         }
+
+
+        public static void RunTests()
+        {
+            {
+                Player p = new Player();
+                Enemy e = new Enemy(10, 27, 6);
+                PowerUp pu = new PowerUp();
+
+                Room r = new Room();
+                r.AddGameObject(p);
+                r.AddGameObject(e);
+                r.AddGameObject(pu);
+
+                r.RemovingObject(p);
+                r.RemovingObject(e);
+
+
+            }
+        }
+
     }
 }

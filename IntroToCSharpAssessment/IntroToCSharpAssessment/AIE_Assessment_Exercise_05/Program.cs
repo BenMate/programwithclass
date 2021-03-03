@@ -38,7 +38,7 @@ namespace AIE_Assessment_Exercise_05
             // Write a function that accepts the integer array 'numbers' and outputs the sorted array to the console
 
           static void SortDescending(int[] numbers)
-         {
+          {
              bool isSorted = false;
              int lastUnsorted = numbers.Length - 1;
              int tmp = 0;
@@ -60,6 +60,6 @@ namespace AIE_Assessment_Exercise_05
 
                  lastUnsorted--;
              }
-        }                   
+          }                   
     }
 }

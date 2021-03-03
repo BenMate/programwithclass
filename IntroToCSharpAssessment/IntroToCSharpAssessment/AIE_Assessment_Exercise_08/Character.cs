@@ -4,29 +4,37 @@ using System.Text;
 
 namespace AIE_Assessment_Exercise_08
 {
-    class Character : GameObject
+    public abstract class Character : GameObject
     {
-        int att;
-        int hp;
-        int def;
+        public int att;
+        public int hp;
+        public int def;
 
-        
+        public Character() : base ()
 
-        public Character()
         {
 
         }
 
         public Character(int att,int hp, int def) : base()
         {
-            this.att = att;
-            this.hp = hp;
+            this.att = att;           
             this.def = def;
+            this.hp = hp;
 
         }
+        
+        
+        public bool IsAlive()
+        {      
+            if (hp >= 0)
+            {
 
-        // isAlive() = bool;
-
+                return false;
+            }
+            return true;
+        }
+              
     }
 }
 

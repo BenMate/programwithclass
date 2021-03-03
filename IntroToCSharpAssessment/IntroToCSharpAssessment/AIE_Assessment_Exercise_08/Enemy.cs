@@ -6,26 +6,35 @@ namespace AIE_Assessment_Exercise_08
 {
     class Enemy: Character
     {
-        int att, hp, def;
+        int hp = 10;
+        int att;
+        int def;
 
-        public Enemy()
+       
+        public Enemy() : base ()
         {
 
         }
 
-
-        public Enemy(int att, int hp, int def) : base()
+        public Enemy(int att, int hp, int def) : base(att,hp,def)
         {
             this.att = att;
             this.hp = hp;
             this.def = def;
         }
+         
 
-
-       public void Draw()
+       public override void Draw()
         {
+            if (hp >= 10)
+            {
+                Console.Write("O");
 
+            }
+            else
+            {
+                Console.Write("o");
+            }
         }
-
     }
 }

@@ -16,7 +16,7 @@ namespace AIE_Assessment_Exercise_07
 
         }
       
-        //Constructor that accepts a string argument
+        //Constructor that accepts  string arguments
         public Person(string name, string phone,string email)
         {
             this.name  = name;

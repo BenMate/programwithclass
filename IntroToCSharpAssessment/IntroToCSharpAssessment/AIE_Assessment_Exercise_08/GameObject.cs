@@ -4,17 +4,27 @@ using System.Text;
 
 namespace AIE_Assessment_Exercise_08
 {
-    class GameObject
+    public abstract class GameObject
     {
-        int xPosition;
-        int yPosition;
+        public int xPosition;
+        public int yPosition;
 
 
-
-
-        void Draw()
+        public GameObject()
         {
 
+        }
+
+        public GameObject(int xPosition, int yPosition) 
+        {
+            this.xPosition = xPosition;
+            this.yPosition = yPosition;
+        }
+
+
+        public virtual void Draw()
+        {
+            
         }
     }
 }

@@ -6,17 +6,17 @@ namespace AIE_Assessment_Exercise_07
 {
     public class Doctor: Person
     {
-        //template for doctor
+       
 
          string name = "";
 
-        //default constructor
-        public Doctor()
+        //default constructor for doctor
+        public Doctor() : base ("smith", "12345" , "doctor@email.com")
         {
 
         }
 
-        //Constructor that accepts string value 
+        //Constructor that accepts string arguements 
         public Doctor(string name, string salary, string phone, string email) : base ()
         {
             this.name = name;
